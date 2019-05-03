@@ -1,0 +1,672 @@
+ZINC000043463577
+                    3D
+ Structure written by MMmdl.
+ 29 30  0  0  1  0            999 V2000
+   18.8130    4.9185   57.6339 N   0  0  0  0  0  0
+   18.5578    5.5414   56.4804 C   0  0  0  0  0  0
+   19.2138    5.3340   55.4660 O   0  0  0  0  0  0
+   17.5136    6.3909   56.5085 N   0  0  0  0  0  0
+   17.6102    7.6800   57.0465 N   0  0  0  0  0  0
+   16.3685    8.3055   57.0230 C   0  0  0  0  0  0
+   15.4458    7.4235   56.5979 C   0  0  0  0  0  0
+   13.9745    7.7683   56.3716 C   0  0  0  0  0  0
+   13.6041    9.0972   57.0664 C   0  0  0  0  0  0
+   14.6815   10.1826   56.8694 C   0  0  0  0  0  0
+   16.0587    9.7426   57.4227 C   0  0  0  0  0  0
+   16.0935    6.0889   56.2998 C   0  0  2  0  0  0
+   15.6241    5.1112   57.2051 O   0  0  0  0  0  0
+   15.7538    5.5628   54.8658 C   0  0  0  0  0  0
+   15.9686    6.4757   53.9258 F   0  0  0  0  0  0
+   16.4973    4.5128   54.5350 F   0  0  0  0  0  0
+   14.4784    5.1874   54.7396 F   0  0  0  0  0  0
+   19.5649    4.2496   57.6849 H   0  0  0  0  0  0
+   18.2452    5.1101   58.4535 H   0  0  0  0  0  0
+   18.4652    8.0812   56.6660 H   0  0  0  0  0  0
+   13.3116    6.9612   56.6841 H   0  0  0  0  0  0
+   13.7824    7.8568   55.3003 H   0  0  0  0  0  0
+   12.6399    9.4523   56.7002 H   0  0  0  0  0  0
+   13.4733    8.9139   58.1346 H   0  0  0  0  0  0
+   14.3675   11.1098   57.3495 H   0  0  0  0  0  0
+   14.7691   10.4082   55.8040 H   0  0  0  0  0  0
+   16.8243   10.4344   57.0704 H   0  0  0  0  0  0
+   16.0590    9.8320   58.5092 H   0  0  0  0  0  0
+   15.9985    5.3126   58.0870 H   0  0  0  0  0  0
+  1  2  1  0  0  0
+  1 18  1  0  0  0
+  1 19  1  0  0  0
+  2  3  2  0  0  0
+  2  4  1  0  0  0
+  4 12  1  0  0  0
+  4  5  1  0  0  0
+  5  6  1  0  0  0
+  5 20  1  0  0  0
+  6 11  1  0  0  0
+  6  7  2  0  0  0
+  7  8  1  0  0  0
+  7 12  1  0  0  0
+  8  9  1  0  0  0
+  8 21  1  0  0  0
+  8 22  1  0  0  0
+  9 10  1  0  0  0
+  9 23  1  0  0  0
+  9 24  1  0  0  0
+ 10 11  1  0  0  0
+ 10 25  1  0  0  0
+ 10 26  1  0  0  0
+ 11 27  1  0  0  0
+ 11 28  1  0  0  0
+ 12 13  1  0  0  0
+ 12 14  1  0  0  0
+ 13 29  1  0  0  0
+ 14 15  1  0  0  0
+ 14 16  1  0  0  0
+ 14 17  1  0  0  0
+M  END
+> <s_m_entry_id>
+1
+
+> <s_m_entry_name>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.1
+
+> <s_m_Source_Path>
+/data/ALM_suwipa
+
+> <s_m_Source_File>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.sdf
+
+> <i_m_Source_File_Index>
+1
+
+> <i_lp_mmshare_version>
+36015
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0087
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0087
+
+> <r_epik_State_Penalty>
+  0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+0
+
+> <i_epik_Tot_Q>
+0
+
+> <i_epik_Tot_abs_Q>
+0
+
+> <i_f3d_flags>
+0
+
+> <s_lp_Force_Field>
+OPLS3
+
+> <r_lp_Energy>
+4.31735298607268
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+ZINC000043463577-1
+
+> <SEL>
+YES
+
+> <chiral flag>
+0
+
+> <version>
+0
+
+> <s_i_glide_gridfile>
+glide-grid_h5ndzallositAZ8838_HID135_HBAc
+
+> <i_i_glide_lignum>
+17
+
+> <i_i_glide_rotatable_bonds>
+3
+
+> <r_i_docking_score>
+-9.41974570726335
+
+> <r_i_glide_ligand_efficiency>
+-0.55410268866255
+
+> <r_i_glide_ligand_efficiency_sa>
+-1.4247540413467
+
+> <r_i_glide_ligand_efficiency_ln>
+-2.45740188760159
+
+> <r_i_glide_gscore>
+-9.41974570726335
+
+> <r_i_glide_lipo>
+-1.37939243576257
+
+> <r_i_glide_hbond>
+-1.21245812553297
+
+> <r_i_glide_metal>
+0
+
+> <r_i_glide_rewards>
+-2.46270235907909
+
+> <r_i_glide_evdw>
+-23.4153480529785
+
+> <r_i_glide_ecoul>
+-19.4662818908691
+
+> <r_i_glide_erotb>
+0
+
+> <r_i_glide_esite>
+-0.274483100609417
+
+> <r_i_glide_emodel>
+-65.3034411718152
+
+> <r_i_glide_energy>
+-42.8816299438477
+
+> <r_i_glide_einternal>
+5.80510950088501
+
+> <i_i_glide_confnum>
+1
+
+> <i_i_glide_posenum>
+88
+
+> <r_i_glide_eff_state_penalty>
+0
+
+> <b_glide_conssat_A:HIS:135:NE2(hbond)>
+1
+
+> <chiral flag>
+1
+
+> <s_m_subgroup_title>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <s_m_subgroupid>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <b_m_subgroup_collapsed>
+0
+
+$$$$
+ZINC000000302386
+                    3D
+ Structure written by MMmdl.
+ 30 31  0  0  1  0            999 V2000
+   18.8137    4.4131   57.0951 C   0  0  0  0  0  0
+   18.4998    5.7186   56.3702 C   0  0  0  0  0  0
+   19.2232    6.1139   55.4661 O   0  0  0  0  0  0
+   17.3966    6.3921   56.7272 N   0  0  0  0  0  0
+   17.3954    7.7800   56.8536 N   0  0  0  0  0  0
+   16.1198    8.3011   56.7989 C   0  0  0  0  0  0
+   15.2721    7.3068   56.4843 C   0  0  0  0  0  0
+   13.7702    7.5163   56.2830 C   0  0  0  0  0  0
+   13.4156    9.0235   56.2675 C   0  0  0  0  0  0
+   14.1998    9.8219   57.3267 C   0  0  0  0  0  0
+   15.7173    9.7398   57.0827 C   0  0  0  0  0  0
+   16.0319    5.9924   56.3995 C   0  0  2  0  0  0
+   15.6143    5.0523   57.3581 O   0  0  0  0  0  0
+   15.8516    5.3127   54.9927 C   0  0  0  0  0  0
+   14.5833    4.9848   54.7351 F   0  0  0  0  0  0
+   16.2612    6.1068   53.9991 F   0  0  0  0  0  0
+   16.5485    4.1791   54.8916 F   0  0  0  0  0  0
+   19.7652    4.5078   57.6185 H   0  0  0  0  0  0
+   18.8833    3.5878   56.3843 H   0  0  0  0  0  0
+   18.0552    4.1677   57.8401 H   0  0  0  0  0  0
+   18.2220    8.1135   56.3677 H   0  0  0  0  0  0
+   13.2156    7.0047   57.0652 H   0  0  0  0  0  0
+   13.4001    7.0409   55.3751 H   0  0  0  0  0  0
+   13.6308    9.4357   55.2797 H   0  0  0  0  0  0
+   12.3482    9.1581   56.4158 H   0  0  0  0  0  0
+   13.9936    9.4137   58.3172 H   0  0  0  0  0  0
+   13.8706   10.8619   57.3461 H   0  0  0  0  0  0
+   15.9896   10.3981   56.2656 H   0  0  0  0  0  0
+   16.2369   10.1276   57.9600 H   0  0  0  0  0  0
+   15.9963    5.3128   58.2228 H   0  0  0  0  0  0
+  1  2  1  0  0  0
+  1 18  1  0  0  0
+  1 19  1  0  0  0
+  1 20  1  0  0  0
+  2  3  2  0  0  0
+  2  4  1  0  0  0
+  4 12  1  0  0  0
+  4  5  1  0  0  0
+  5  6  1  0  0  0
+  5 21  1  0  0  0
+  6 11  1  0  0  0
+  6  7  2  0  0  0
+  7  8  1  0  0  0
+  7 12  1  0  0  0
+  8  9  1  0  0  0
+  8 22  1  0  0  0
+  8 23  1  0  0  0
+  9 10  1  0  0  0
+  9 24  1  0  0  0
+  9 25  1  0  0  0
+ 10 11  1  0  0  0
+ 10 26  1  0  0  0
+ 10 27  1  0  0  0
+ 11 28  1  0  0  0
+ 11 29  1  0  0  0
+ 12 13  1  0  0  0
+ 12 14  1  0  0  0
+ 13 30  1  0  0  0
+ 14 15  1  0  0  0
+ 14 16  1  0  0  0
+ 14 17  1  0  0  0
+M  END
+> <s_m_entry_id>
+2
+
+> <s_m_entry_name>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.2
+
+> <s_m_Source_Path>
+/data/ALM_suwipa
+
+> <s_m_Source_File>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.sdf
+
+> <i_m_Source_File_Index>
+2
+
+> <i_lp_mmshare_version>
+36015
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0048
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0048
+
+> <r_epik_State_Penalty>
+  0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+0
+
+> <i_epik_Tot_Q>
+0
+
+> <i_epik_Tot_abs_Q>
+0
+
+> <i_f3d_flags>
+0
+
+> <s_lp_Force_Field>
+OPLS3
+
+> <r_lp_Energy>
+3.74589399164665
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+ZINC000000302386-1
+
+> <SEL>
+YES
+
+> <chiral flag>
+0
+
+> <version>
+0
+
+> <s_i_glide_gridfile>
+glide-grid_h5ndzallositAZ8838_HID135_HBAc
+
+> <i_i_glide_lignum>
+476
+
+> <i_i_glide_rotatable_bonds>
+3
+
+> <r_i_docking_score>
+-9.31466171057711
+
+> <r_i_glide_ligand_efficiency>
+-0.547921277092771
+
+> <r_i_glide_ligand_efficiency_sa>
+-1.40885989158806
+
+> <r_i_glide_ligand_efficiency_ln>
+-2.4299878129717
+
+> <r_i_glide_gscore>
+-9.31466171057711
+
+> <r_i_glide_lipo>
+-1.55751470907038
+
+> <r_i_glide_hbond>
+-0.98775379871518
+
+> <r_i_glide_metal>
+0
+
+> <r_i_glide_rewards>
+-2.43907917179935
+
+> <r_i_glide_evdw>
+-20.8116130828857
+
+> <r_i_glide_ecoul>
+-20.0441493988037
+
+> <r_i_glide_erotb>
+0
+
+> <r_i_glide_esite>
+-0.283110967027367
+
+> <r_i_glide_emodel>
+-57.341972280795
+
+> <r_i_glide_energy>
+-40.8557624816895
+
+> <r_i_glide_einternal>
+11.4242391586304
+
+> <i_i_glide_confnum>
+2
+
+> <i_i_glide_posenum>
+226
+
+> <r_i_glide_eff_state_penalty>
+0
+
+> <b_glide_conssat_A:HIS:135:NE2(hbond)>
+1
+
+> <chiral flag>
+1
+
+> <s_m_subgroup_title>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <s_m_subgroupid>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <b_m_subgroup_collapsed>
+0
+
+$$$$
+ZINC000043198590
+                    3D
+ Structure written by MMmdl.
+ 46 47  0  0  1  0            999 V2000
+   18.3775    6.9128   55.4787 O   0  0  0  0  0  0
+   17.6142    6.3130   56.5340 C   0  0  2  0  0  0
+   18.5625    5.2997   57.2640 C   0  0  0  0  0  0
+   18.7990    4.0717   56.4264 C   0  0  0  0  0  0
+   18.0658    3.7542   55.3613 C   0  0  0  0  0  0
+   16.8245    4.5126   54.9196 C   0  0  0  0  0  0
+   16.3457    5.5342   55.9918 C   0  0  1  0  0  0
+   15.7253    4.8209   57.0656 O   0  0  0  0  0  0
+   15.2242    6.3878   55.3124 C   0  0  0  0  0  0
+   14.1648    7.0882   56.1964 C   0  0  0  0  0  0
+   13.8249    8.5154   55.7284 C   0  0  0  0  0  0
+   13.0217    9.3119   56.7732 C   0  0  0  0  0  0
+   13.3133   10.8203   56.8586 C   0  0  0  0  0  0
+   14.3672   11.4241   57.7961 C   0  0  0  0  0  0
+   15.7880   11.0426   57.4204 C   0  0  0  0  0  0
+   16.0688    9.6146   57.8656 C   0  0  0  0  0  0
+   17.0569    8.8575   56.9963 C   0  0  0  0  0  0
+   17.2327    7.4284   57.5307 C   0  0  0  0  0  0
+   19.0046    7.5235   55.8885 H   0  0  0  0  0  0
+   19.5448    5.7129   57.4656 H   0  0  0  0  0  0
+   18.1627    4.9895   58.2305 H   0  0  0  0  0  0
+   19.6142    3.4235   56.6574 H   0  0  0  0  0  0
+   18.4175    2.9129   54.8024 H   0  0  0  0  0  0
+   17.0553    5.0089   53.9763 H   0  0  0  0  0  0
+   16.0273    3.8015   54.7039 H   0  0  0  0  0  0
+   16.0643    5.1361   57.9259 H   0  0  0  0  0  0
+   15.7070    7.1066   54.6656 H   0  0  0  0  0  0
+   14.6568    5.7576   54.6242 H   0  0  0  0  0  0
+   13.2505    6.4926   56.2123 H   0  0  0  0  0  0
+   14.4800    7.1048   57.2338 H   0  0  0  0  0  0
+   14.7213    9.0672   55.4679 H   0  0  0  0  0  0
+   13.2663    8.4613   54.7919 H   0  0  0  0  0  0
+   12.0142    9.2343   56.4021 H   0  0  0  0  0  0
+   13.0051    8.8575   57.7651 H   0  0  0  0  0  0
+   13.6142   11.1236   55.8656 H   0  0  0  0  0  0
+   12.3729   11.3128   57.0867 H   0  0  0  0  0  0
+   14.2743   12.5098   57.7185 H   0  0  0  0  0  0
+   14.1680   11.1887   58.8380 H   0  0  0  0  0  0
+   15.9138   11.1633   56.3460 H   0  0  0  0  0  0
+   16.5019   11.7241   57.8836 H   0  0  0  0  0  0
+   16.4142    9.6396   58.8872 H   0  0  0  0  0  0
+   15.1672    9.0321   57.9729 H   0  0  0  0  0  0
+   16.7327    8.8470   55.9609 H   0  0  0  0  0  0
+   18.0125    9.3824   56.9915 H   0  0  0  0  0  0
+   16.3925    7.1114   58.1450 H   0  0  0  0  0  0
+   18.0142    7.5090   58.2657 H   0  0  0  0  0  0
+  1 19  1  0  0  0
+  1  2  1  0  0  0
+  2  7  1  0  0  0
+  2 18  1  0  0  0
+  2  3  1  0  0  0
+  3  4  1  0  0  0
+  3 20  1  0  0  0
+  3 21  1  0  0  0
+  4  5  2  0  0  0
+  4 22  1  0  0  0
+  5  6  1  0  0  0
+  5 23  1  0  0  0
+  6  7  1  0  0  0
+  6 24  1  0  0  0
+  6 25  1  0  0  0
+  7  8  1  0  0  0
+  7  9  1  0  0  0
+  8 26  1  0  0  0
+  9 10  1  0  0  0
+  9 27  1  0  0  0
+  9 28  1  0  0  0
+ 10 11  1  0  0  0
+ 10 29  1  0  0  0
+ 10 30  1  0  0  0
+ 11 12  1  0  0  0
+ 11 31  1  0  0  0
+ 11 32  1  0  0  0
+ 12 13  1  0  0  0
+ 12 33  1  0  0  0
+ 12 34  1  0  0  0
+ 13 14  1  0  0  0
+ 13 35  1  0  0  0
+ 13 36  1  0  0  0
+ 14 15  1  0  0  0
+ 14 37  1  0  0  0
+ 14 38  1  0  0  0
+ 15 16  1  0  0  0
+ 15 39  1  0  0  0
+ 15 40  1  0  0  0
+ 16 17  1  0  0  0
+ 16 41  1  0  0  0
+ 16 42  1  0  0  0
+ 17 18  1  0  0  0
+ 17 43  1  0  0  0
+ 17 44  1  0  0  0
+ 18 45  1  0  0  0
+ 18 46  1  0  0  0
+M  END
+> <s_m_entry_id>
+4
+
+> <s_m_entry_name>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.4
+
+> <s_m_Source_Path>
+/data/ALM_suwipa
+
+> <s_m_Source_File>
+sp_hid135HBAcc_allmerge_pv_cutoof-65.sdf
+
+> <i_m_Source_File_Index>
+4
+
+> <i_lp_mmshare_version>
+36015
+
+> <r_lp_tautomer_probability>
+1
+
+> <r_epik_Ionization_Penalty>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Charging>
+  0.0000
+
+> <r_epik_Ionization_Penalty_Neutral>
+  0.0000
+
+> <r_epik_State_Penalty>
+  0.0000
+
+> <r_epik_Charging_Adjusted_Penalty>
+0
+
+> <i_epik_Tot_Q>
+0
+
+> <i_epik_Tot_abs_Q>
+0
+
+> <i_f3d_flags>
+0
+
+> <s_lp_Force_Field>
+OPLS3
+
+> <r_lp_Energy>
+25.36929836746
+
+> <b_lp_Chiralities_Consistent>
+1
+
+> <s_lp_Variant>
+ZINC000043198590-1
+
+> <SEL>
+YES
+
+> <chiral flag>
+0
+
+> <version>
+0
+
+> <s_i_glide_gridfile>
+glide-grid_h5ndzallositAZ8838_HID135_HBAc
+
+> <i_i_glide_lignum>
+2
+
+> <i_i_glide_rotatable_bonds>
+2
+
+> <r_i_docking_score>
+-8.72923652020912
+
+> <r_i_glide_ligand_efficiency>
+-0.484957584456062
+
+> <r_i_glide_ligand_efficiency_sa>
+-1.27094841479505
+
+> <r_i_glide_ligand_efficiency_ln>
+-2.24380523596277
+
+> <r_i_glide_gscore>
+-8.72923652020912
+
+> <r_i_glide_lipo>
+-2.66885523586037
+
+> <r_i_glide_hbond>
+-1.08490726560756
+
+> <r_i_glide_metal>
+0
+
+> <r_i_glide_rewards>
+-1.80292548625522
+
+> <r_i_glide_evdw>
+-18.0826568603516
+
+> <r_i_glide_ecoul>
+-15.1227712631226
+
+> <r_i_glide_erotb>
+0
+
+> <r_i_glide_esite>
+0
+
+> <r_i_glide_emodel>
+-51.5099670733675
+
+> <r_i_glide_energy>
+-33.2054281234741
+
+> <r_i_glide_einternal>
+1.44705939292908
+
+> <i_i_glide_confnum>
+1
+
+> <i_i_glide_posenum>
+708
+
+> <r_i_glide_eff_state_penalty>
+0
+
+> <b_glide_conssat_A:HIS:135:NE2(hbond)>
+1
+
+> <chiral flag>
+1
+
+> <s_m_subgroup_title>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <s_m_subgroupid>
+sp_hid135HBAcc_allmerge_pv_cutoof-65
+
+> <b_m_subgroup_collapsed>
+0
+
+$$$$
