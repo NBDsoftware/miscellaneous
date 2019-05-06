@@ -1,7 +1,7 @@
 import pytest
 import os
 import glob
-from miscelanious import search_molec_sdfs as sms
+from miscellaneous import search_molec_sdfs as sms
 
 DIR = os.path.dirname(__file__)
 SDF_FILES = glob.glob(os.path.join(DIR, "data/sdf_file_intersec/test_HB*"))
