@@ -8,6 +8,13 @@ From Conda (recommended)
 
  conda install -c NostrumBioDiscovery miscellaneous
 
+From PyPi
+-----------
+
+::
+
+  pip install miscellaneous
+
 From Source Code
 ---------------------
 
@@ -20,7 +27,3 @@ From Source Code
  python setup.py install
 
 
-From PyPi
------------
-
-Non implemented yet
