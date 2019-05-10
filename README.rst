@@ -7,6 +7,9 @@ Description
 .. image:: https://anaconda.org/nostrumbiodiscovery/miscellaneous/badges/version.svg
        :target: https://anaconda.org/nostrumbiodiscovery/miscellaneous
 
+.. image:: https://badge.fury.io/py/miscellaneous.svg
+       :target: https://badge.fury.io/py/miscellaneous
+
 Miscelanious of python scripts
 
 Installation
