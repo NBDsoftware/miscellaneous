@@ -9,9 +9,9 @@ from rdkit.Chem.Fingerprints import FingerprintMols
 def search_molecule_in_all_sdf(sdf_files):
     print("Searchin for molecules in all sdf files...")
     sdf_file_ref = sdf_files.pop()
-    found = [False] * len(sdf_files)
-    molecules = [False] * len(sdf_files)
     for m_ref in tqdm(Chem.SDMolSupplier(sdf_file_ref)):
+        found = [False] * len(sdf_files)
+        molecules = [False] * len(sdf_files)
         fp = FingerprintMols.FingerprintMol(m_ref)
         for i, sdf in enumerate(sdf_files):
             for m in Chem.SDMolSupplier(sdf):
@@ -36,6 +36,7 @@ def main(sdf_files):
             output_name = os.path.basename(sdf_file.rsplit(".",1)[0]) + "_output.sdf"
             with open(output_name, 'a') as f:
                 f.write(Chem.MolToMolBlock(m2))
+                f.write("\n$$$$\n")
     print("Found {} common molecules in all sdf files".format(n_mols))
     return n_mols
 
