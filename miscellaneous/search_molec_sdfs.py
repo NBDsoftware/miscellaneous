@@ -9,12 +9,12 @@ from rdkit.Chem.Fingerprints import FingerprintMols
 def search_molecule_in_all_sdf(sdf_files):
     print("Searchin for molecules in all sdf files...")
     sdf_file_ref = sdf_files.pop()
-    for m_ref in tqdm(Chem.SDMolSupplier(sdf_file_ref)):
+    for m_ref in tqdm(Chem.SDMolSupplier(sdf_file_ref, removeHs=False )):
         found = [False] * len(sdf_files)
         molecules = [False] * len(sdf_files)
         fp = FingerprintMols.FingerprintMol(m_ref)
         for i, sdf in enumerate(sdf_files):
-            for m in Chem.SDMolSupplier(sdf):
+            for m in Chem.SDMolSupplier(sdf, removeHs=False):
                 if FingerprintMols.FingerprintMol(m) == fp:
                     found[i] = True
                     molecules[i] = m
