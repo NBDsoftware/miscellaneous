@@ -3,16 +3,25 @@ From python API
 
 
 Search all molecules present in all sdf files
---------------------------------------------
+-------------------------------------------------
 
 ::
+  
+  # Load Molecule and look for commound compound and its different
+  # conformations in the different sdf files
 
   from rdkit import Chem
   from miscellaneous import search_molec_sdfs as sd 
-  molecules = sd.search_molecule_in_all_sdf(sdf_files)
+  sdf_files = glob.glob("miscellaneous/tests/data/test_*.sdf")
+  allsdf_molecule_conformations = sd.search_molecule_in_all_sdf(sdf_files)
+  
+  #Output molecules and all conformations
   w = Chem.SDWriter(output)
-  for m in mols_in_all_sdfs: 
+  for m, conformations in mols_in_all_sdfs: 
       w.write(m)
+      for conformation in conformations:
+          w.wrtie(conformation)
+  
 
 
 
