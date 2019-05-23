@@ -23,7 +23,8 @@ def search_molecule_in_all_sdf(sdf_files):
         if all(found):
             yield m_ref, molecules
 
-def main(sdf_files, output):
+def main(sdf_files):
+    output = os.path.basename(sdf_files[-1].rsplit(".", 1)[0]) + "_output.sdf"
     mols_in_all_sdfs = search_molecule_in_all_sdf(sdf_files)
     w = Chem.SDWriter(output)
     n_mols = 0
@@ -32,7 +33,7 @@ def main(sdf_files, output):
         n_mols += 1
         # Output other sdfs
         for i, (m2, sdf_file) in enumerate(zip(molecules, sdf_files)):
-            output_name = os.path.basename(sdf_file.rsplit(".",1)[0]) + "_output{}.sdf".format(i)
+            output_name = os.path.basename(sdf_file.rsplit(".",1)[0]) + "_output.sdf"
             with open(output_name, 'a') as f:
                 f.write(Chem.MolToMolBlock(m2))
     print("Found {} common molecules in all sdf files".format(n_mols))
@@ -41,11 +42,10 @@ def main(sdf_files, output):
 
 def add_args(parser):
     parser.add_argument('sdfs', nargs="+", help="sdf files to check")
-    parser.add_argument('--output', type=str, help="output_file", default="molecules.sdf")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Check for molecules in all sdf files')
     add_args(parser)
     args = parser.parse_args()
-    main(args.sdfs, args.output)
+    main(args.sdfs)
