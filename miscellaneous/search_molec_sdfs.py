@@ -34,9 +34,9 @@ def main(sdf_files):
         # Output other sdfs
         for i, (m2, sdf_file) in enumerate(zip(molecules, sdf_files)):
             output_name = os.path.basename(sdf_file.rsplit(".",1)[0]) + "_output.sdf"
-            with open(output_name, 'a') as f:
-                f.write(Chem.MolToMolBlock(m2))
-                f.write("\n$$$$\n")
+            sdfFile = open(output_name, 'a')
+            w1 = Chem.SDWriter(sdfFile)
+            w1.write(m2)
     print("Found {} common molecules in all sdf files".format(n_mols))
     return n_mols
 
