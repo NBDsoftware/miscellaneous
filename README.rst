@@ -1,5 +1,5 @@
 Description
-===============
+==============
 
 .. image:: https://travis-ci.com/NostrumBioDiscovery/miscellaneous.svg?branch=master
        :target: https://travis-ci.com/NostrumBioDiscovery/miscellaneous
