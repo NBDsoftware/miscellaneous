@@ -171,16 +171,26 @@
 <span class="c1"># conformations in the different sdf files</span>
 
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+<span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">from</span> <span class="nn">miscellaneous</span> <span class="k">import</span> <span class="n">search_molec_sdfs</span> <span class="k">as</span> <span class="n">sd</span>
-<span class="n">sdf_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;miscellaneous/tests/data/test_*.sdf&quot;</span><span class="p">)</span>
-<span class="n">allsdf_molecule_conformations</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">search_molecule_in_all_sdf</span><span class="p">(</span><span class="n">sdf_files</span><span class="p">)</span>
 
-<span class="c1">#Output molecules and all conformations</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDWriter</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">conformations</span> <span class="ow">in</span> <span class="n">mols_in_all_sdfs</span><span class="p">:</span>
-    <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">conformation</span> <span class="ow">in</span> <span class="n">conformations</span><span class="p">:</span>
-        <span class="n">w</span><span class="o">.</span><span class="n">wrtie</span><span class="p">(</span><span class="n">conformation</span><span class="p">)</span>
+<span class="n">output</span><span class="o">=</span><span class="s2">&quot;output.sdf&quot;</span>
+<span class="n">sdf_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;../tests/data/sdf_file*/test_*.sdf&quot;</span><span class="p">)</span>
+<span class="n">mols_in_all_sdfs</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">search_molecule_in_all_sdf</span><span class="p">(</span><span class="n">sdf_files</span><span class="p">)</span>
+  <span class="c1"># Load Molecule and look for commound compound and its different</span>
+  <span class="c1"># conformations in the different sdf files</span>
+
+  <span class="kn">from</span> <span class="nn">rdkit</span> <span class="k">import</span> <span class="n">Chem</span>
+  <span class="kn">from</span> <span class="nn">miscellaneous</span> <span class="k">import</span> <span class="n">search_molec_sdfs</span> <span class="k">as</span> <span class="n">sd</span>
+  <span class="n">sdf_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;miscellaneous/tests/data/test_*.sdf&quot;</span><span class="p">)</span>
+  <span class="n">allsdf_molecule_conformations</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">search_molecule_in_all_sdf</span><span class="p">(</span><span class="n">sdf_files</span><span class="p">)</span>
+
+  <span class="c1">#Output molecules and all conformations</span>
+  <span class="n">w</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDWriter</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">conformations</span> <span class="ow">in</span> <span class="n">mols_in_all_sdfs</span><span class="p">:</span>
+      <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">conformation</span> <span class="ow">in</span> <span class="n">conformations</span><span class="p">:</span>
+          <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">conformation</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
