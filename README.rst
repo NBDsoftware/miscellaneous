@@ -15,11 +15,16 @@ Miscelanious of python scripts
 Installation
 ---------------
 
-not yet
+conda install -c NostrumBioDiscovery miscellaneous
 
 
-Usage
----------
+Use from API
+--------------------
 
-python -m miscelanious.search_molec_sdfs <your files>  --output molecules_on_both.sdf
-python -m miscelanious.search_molec_sdfs nostrumb_hits*.sdf  --output molecules_intersec.sdf
+https://nostrumbiodiscovery.github.io/miscellaneous/tutorial/api_tutorial/index.html
+
+Use from commandline
+-------------------------
+
+https://nostrumbiodiscovery.github.io/miscellaneous/tutorial/command_line_tutorial/index.html
+
