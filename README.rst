@@ -10,6 +10,9 @@ Description
 .. image:: https://badge.fury.io/py/miscellaneous.svg
        :target: https://badge.fury.io/py/miscellaneous
 
+.. image:: https://codecov.io/gh/NostrumBioDiscovery/miscellaneous/branch/master/graph/badge.svg
+       :target: https://badge.fury.io/py/miscellaneous
+
 Miscelanious of python scripts
 
 Installation
