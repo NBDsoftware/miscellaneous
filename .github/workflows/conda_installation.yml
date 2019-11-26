@@ -1,4 +1,4 @@
-name: Analogs Finder From Conda
+name: Miscellaneous From Conda
 on: [push]
 
 jobs:
