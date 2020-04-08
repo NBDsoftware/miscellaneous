@@ -46,7 +46,7 @@ class PDB_object():
 
     def get_file(self, folder="."):
         file_content = requests.get(self.download_url).text
-        file_name = "{}\{}.pdb".format(folder, self.code)
+        file_name = "{}/{}.pdb".format(folder, self.code)
 
         with open(file_name, "w") as PDB_file:
             PDB_file.write(file_content)
@@ -65,7 +65,7 @@ def write_csv(PDB_codes, folder="."):
     if not os.path.isdir(folder):
         os.mkdir(folder)
 
-    file = "{}\summary.csv".format(folder)
+    file = "{}/summary.csv".format(folder)
 
     for code in PDB_codes:
         PDB = PDB_object(code)
