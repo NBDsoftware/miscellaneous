@@ -4,10 +4,10 @@ with the keywords and write a summary to a CSV file, which includes structure co
 resolution, reference DOI, etc.
 
 To run it on command line:
-$ python scraper.py query
+$ python PDBscraper.py "query"
 
 Example:
-$ python scraper.py "integrin alpha V beta 6"
+$ python PDBscraper.py "integrin alpha V beta 6"
 """
 
 import argparse
@@ -17,7 +17,7 @@ import pandas as pd
 import requests
 
 
-def PDB_search(search_string):  # doesnt work
+def pdb_search(search_string):
     url = "https://www.rcsb.org/pdb/rest/search/"
     header = {'Content-Type': 'application/x-www-form-urlencoded'}
     data = """
@@ -25,11 +25,11 @@ def PDB_search(search_string):  # doesnt work
     <keywords>{}</keywords></orgPdbQuery>
     """.format(search_string)
 
-    PDB_codes = requests.post(url, data=data, headers=header).text.split()
-    return PDB_codes, search_string.replace(" ", "_")
+    pdb_codes = requests.post(url, data=data, headers=header).text.split()
+    return pdb_codes, search_string.replace(" ", "_")
 
 
-class PDB_object():
+class PDBObject:
 
     def __init__(self, code):
         self.code = code
@@ -46,46 +46,46 @@ class PDB_object():
 
     def get_file(self, folder="."):
         file_content = requests.get(self.download_url).text
-        file_name = "{}/{}.pdb".format(folder, self.code)
+        file_name = os.path.join(folder, "{}.pdb".format(self.code))
 
         with open(file_name, "w") as PDB_file:
             PDB_file.write(file_content)
 
 
-def download_structure(PDB_codes, folder="."):
+def download_structure(pdb_codes, folder="."):
     if not os.path.isdir(folder):
         os.mkdir(folder)
 
-    for code in PDB_codes:
-        PDB = PDB_object(code)
-        PDB.get_file(folder)
+    for code in pdb_codes:
+        pdb = PDBObject(code)
+        pdb.get_file(folder)
 
 
-def write_csv(PDB_codes, folder="."):
+def write_csv(pdb_codes, folder="."):
     if not os.path.isdir(folder):
         os.mkdir(folder)
 
-    file = "{}/summary.csv".format(folder)
+    file = os.path.join(folder, "summary.csv")
 
-    for code in PDB_codes:
-        PDB = PDB_object(code)
-        PDB.get_data()
+    for code in pdb_codes:
+        pdb = PDBObject(code)
+        pdb.get_data()
 
         df = pd.DataFrame(
             {'PDB code': code,
-             'Title': PDB.title if PDB.title else ["unknown"],
+             'Title': pdb.title if pdb.title else ["unknown"],
              'Resolution': [resolution.replace("Ã…", "Å").replace("&nbsp", "") for resolution in
-                            PDB.resolution] if PDB.resolution else ["unknown"],
-             'Reference Title': PDB.reference_title if PDB.reference_title else ["unknown"],
-             'Reference DOI': PDB.reference_DOI if PDB.reference_DOI else ["unknown"]
+                            pdb.resolution] if pdb.resolution else ["unknown"],
+             'Reference Title': pdb.reference_title if pdb.reference_title else ["unknown"],
+             'Reference DOI': pdb.reference_DOI if pdb.reference_DOI else ["unknown"]
              })
-        df.to_csv(file, mode='a', header=False)
+        df.to_csv(file, mode='a', header=True)
 
     return file
 
 
 def main(search_string):
-    pdb_codes, folder = PDB_search(search_string)
+    pdb_codes, folder = pdb_search(search_string)
     print("Downloading structures...")
     download_structure(pdb_codes, folder)
     file = write_csv(pdb_codes, folder)
