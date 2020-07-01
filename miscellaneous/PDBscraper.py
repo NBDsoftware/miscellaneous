@@ -4,10 +4,16 @@ with the keywords and write a summary to a CSV file, which includes structure co
 resolution, reference DOI, etc.
 
 To run it on command line:
-$ python PDBscraper.py "query"
+$ python PDBscraper.py --query "..." --download ...
 
 Example:
-$ python PDBscraper.py "integrin alpha V beta 6"
+$ python PDBscraper.py --query "integrin alpha V beta 6" --download False
+"""
+
+"""
+To do:
+- ligand smiles download
+- substructure search
 """
 
 import argparse
@@ -18,6 +24,7 @@ import requests
 
 
 def pdb_search(search_string):
+    search_string = search_string[0]
     url = "https://www.rcsb.org/pdb/rest/search/"
     header = {'Content-Type': 'application/x-www-form-urlencoded'}
     data = """
@@ -26,7 +33,32 @@ def pdb_search(search_string):
     """.format(search_string)
 
     pdb_codes = requests.post(url, data=data, headers=header).text.split()
+
     return pdb_codes, search_string.replace(" ", "_")
+
+
+def filter_results(pdb_codes, included, excluded):
+    filtered = []
+
+    for code in pdb_codes:
+        pdb = PDBObject(code)
+        title = pdb.title[0].lower() if pdb.title else None
+        included = included.lower() if included is not None else ""
+        excluded = excluded.lower() if excluded else None
+
+        if excluded:
+            if included in title and excluded not in title:
+                filtered.append(pdb)
+        else:
+            if included in title:
+                filtered.append(pdb)
+
+    return filtered
+
+
+def substructure_search(substructure_file, inchi_keys):
+    # import rdkit.Chem
+    pass
 
 
 class PDBObject:
@@ -36,13 +68,16 @@ class PDBObject:
         self.info_url = "https://www.rcsb.org/structure/{}".format(self.code)
         self.download_url = "https://files.rcsb.org/download/{}.pdb".format(self.code)
 
-    def get_data(self):
         response = requests.get(self.info_url)
         tree = html.fromstring(response.content)
+
         self.title = tree.xpath("//span[@id='structureTitle']/text()")
         self.reference_title = tree.xpath("//div[@id='primarycitation']/h4/text()")
         self.reference_DOI = tree.xpath("//li[@id='pubmedDOI']/a/text()")
         self.resolution = tree.xpath("//ul[contains(@id,'exp_header')]/li[contains(@id,'resolution')]/text()")
+        self.ligands = tree.xpath("//tr[contains(@id,'ligand_row')]//a[contains(@href, '/ligand/')]/text()")
+        self.inchi_keys = tree.xpath("//tr[contains(@id, 'ligand_row')]//td[3]/text()")
+        self.inchi_keys = [key for key in self.inchi_keys if len(key) == 27]
 
     def get_file(self, folder="."):
         file_content = requests.get(self.download_url).text
@@ -58,7 +93,8 @@ def download_structure(pdb_codes, folder="."):
 
     for code in pdb_codes:
         pdb = PDBObject(code)
-        pdb.get_file(folder)
+        if pdb.title:
+            pdb.get_file(folder)
 
 
 def write_csv(pdb_codes, folder="."):
@@ -67,37 +103,50 @@ def write_csv(pdb_codes, folder="."):
 
     file = os.path.join(folder, "summary.csv")
 
-    for code in pdb_codes:
-        pdb = PDBObject(code)
-        pdb.get_data()
-
+    for pdb in pdb_codes:
         df = pd.DataFrame(
-            {'PDB code': code,
+            {'PDB code': pdb.code,
              'Title': pdb.title if pdb.title else ["unknown"],
              'Resolution': [resolution.replace("Ã…", "Å").replace("&nbsp", "") for resolution in
                             pdb.resolution] if pdb.resolution else ["unknown"],
              'Reference Title': pdb.reference_title if pdb.reference_title else ["unknown"],
-             'Reference DOI': pdb.reference_DOI if pdb.reference_DOI else ["unknown"]
+             'Reference DOI': pdb.reference_DOI if pdb.reference_DOI else ["unknown"],
+             'Ligands': [", ".join(pdb.ligands)] if pdb.ligands else ["none"]
              })
-        df.to_csv(file, mode='a', header=True)
+        df.to_csv(file, mode='a', header=False)
 
     return file
 
 
-def main(search_string):
+def main(search_string, download, included, excluded, substructure_file):
     pdb_codes, folder = pdb_search(search_string)
-    print("Downloading structures...")
-    download_structure(pdb_codes, folder)
-    file = write_csv(pdb_codes, folder)
+    filtered = filter_results(pdb_codes, included, excluded)
+
+    for f in filtered:
+        if download:
+            print("Downloading structures...")
+            download_structure(f, folder)
+
+        if substructure_file:
+            substructure_search(substructure_file, f.inchi_keys)
+
+    file = write_csv(filtered, folder)
+
     print("Done! Summary available in {}.".format(file))
 
 
-def add_args(parser):
-    parser.add_argument('search_string', nargs=1, help="PDB query (string)")
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--query', nargs=1, required=True, help="PDB query (string)")
+    parser.add_argument('--download', required=False, default=False,
+                        help="Set to 'True', if you want to download associated PDB files")
+    parser.add_argument('--included', required=False, help="PDB title must include...")
+    parser.add_argument('--excluded', required=False, help="PDB title must not include...")
+    parser.add_argument('--substructure', required=False, help="SD file with substructure")
+    args = parser.parse_args()
+    return args.query, args.download, args.included, args.excluded, args.substructure
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='PDB query')
-    add_args(parser)
-    args = parser.parse_args()
-    main(str(args.search_string[0]))
+    query, download, included, excluded, substructure = parse_args()
+    main(query, download, included, excluded, substructure)
