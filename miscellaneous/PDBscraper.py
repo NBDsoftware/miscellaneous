@@ -10,12 +10,6 @@ Example:
 $ python PDBscraper.py --query "integrin alpha V beta 6" --download False
 """
 
-"""
-To do:
-- ligand smiles download
-- substructure search
-"""
-
 import argparse
 from lxml import html
 import os
@@ -57,8 +51,17 @@ def filter_results(pdb_codes, included, excluded):
 
 
 def substructure_search(substructure_file, inchi_keys):
-    # import rdkit.Chem
-    pass
+    from rdkit import Chem
+    sub = Chem.SDMolSupploer(substructure_file)
+    matched = []
+
+    for key in inchi_keys:
+        ligand = Chem.MolFromInchi(key)
+
+        if ligand.HasSubstructMatch(sub):
+            matched.append(key)
+
+    return matched
 
 
 class PDBObject:
@@ -97,7 +100,7 @@ def download_structure(pdb_codes, folder="."):
             pdb.get_file(folder)
 
 
-def write_csv(pdb_codes, folder="."):
+def write_csv(pdb_codes, matched, folder="."):
     if not os.path.isdir(folder):
         os.mkdir(folder)
 
@@ -111,7 +114,9 @@ def write_csv(pdb_codes, folder="."):
                             pdb.resolution] if pdb.resolution else ["unknown"],
              'Reference Title': pdb.reference_title if pdb.reference_title else ["unknown"],
              'Reference DOI': pdb.reference_DOI if pdb.reference_DOI else ["unknown"],
-             'Ligands': [", ".join(pdb.ligands)] if pdb.ligands else ["none"]
+             'Ligands': [", ".join(pdb.ligands)] if pdb.ligands else ["none"],
+             'InChi keys': [", ".join(pdb.inchi_keys)] if pdb.inchi_keys else ["none"],
+             'Matched substructures': [key for key in pdb.inchi_keys if key in matched]
              })
         df.to_csv(file, mode='a', header=False)
 
@@ -128,9 +133,9 @@ def main(search_string, download, included, excluded, substructure_file):
             download_structure(f, folder)
 
         if substructure_file:
-            substructure_search(substructure_file, f.inchi_keys)
+            matched = substructure_search(substructure_file, f.inchi_keys)
 
-    file = write_csv(filtered, folder)
+    file = write_csv(filtered, matched, folder)
 
     print("Done! Summary available in {}.".format(file))
 
